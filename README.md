@@ -1,4 +1,10 @@
 # Selenium_Tips
+# Docker Cmd
+```
+docker run -d -p 4444:4444 --env GRID_MAX_SESSION=5  --env GRID_TIMEOUT=0 --env GRID_JETTY_MAX_THREADS=10 -e JAVA_OPTS=-Xmx1024m -v /dev/shm:/dev/shm --name selenium-hub selenium/hub:3.6.0
+docker run -d --env NODE_MAX_SESSION=5 --env NODE_REGISTER_CYCLE=1000     --link selenium-hub:hub -v /dev/shm:/dev/shm selenium/node-chrome:3.6.0
+```
+# Selenium Server Hub/Node CLI Options
 ```
 java -jar selenium-server-standalone-3.0.1.jar -role hub -help
 
