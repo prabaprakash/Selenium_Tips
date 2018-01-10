@@ -5,7 +5,8 @@ docker run -d -p 4444:4444 --env GRID_MAX_SESSION=5  --env GRID_TIMEOUT=0 --env 
 docker run -d --env NODE_MAX_SESSION=5 --env NODE_REGISTER_CYCLE=1000     --link selenium-hub:hub -v /dev/shm:/dev/shm selenium/node-chrome:3.6.0
 ```
 ```
-Node                                                                                                                    
+Additional Arguments
+Node                                                                                                                 
 --env NODE_MAX_INSTANCES=                                                                                                           
 --env NODE_MAX_SESSION=                                                                                                                
 --env NODE_REGISTER_CYCLE=                                                                                                               
