@@ -1,4 +1,4 @@
-# Selenium_Tips for Nightwatch Cucumber
+# Selenium Tips for Nightwatch Cucumber
 
 # Docker CMD
 ```
@@ -32,11 +32,22 @@ Nightwatch Cucumber Parallel Threads go by Feature Files not by Scenarios
 30 Scenarios per Feature File - having 30 Feature File
 
 1 Feature File taken 2 min
+
+4 Threads = 30 Feature Files / 4 = 7.5 = 7.5 * 2 min = 15 min
+6 Threads = 30 Feature Files / 6 = 5 = 5 * 2 min = 10 min
+8 Threads = 30 Feature Files / 8 = 3.7 = 3.7 * 2 min = 7.4 min
+```
+Optimized
+```
+10 Scenarios per Feature File - having 90 Feature File
+
+1 Feature File taken 0.5 min
+
+4 Threads = 90 Feature Files / 4 = 22.5 = 7.5 *  min = 15 min
+6 Threads = 90 Feature Files / 6 = 15 = 5 * 2 min = 10 min
+8 Threads = 90 Feature Files / 8 = 11.25 = 3.7 * 2 min = 7.4 min
 ```
 
-```
-4 Threads = 30 Feature Files / 4 = 7.5 = 7.5 * 2 min =  
-```
 
 
 
