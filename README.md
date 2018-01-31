@@ -41,11 +41,11 @@ Optimized
 ```
 10 Scenarios per Feature File - having 90 Feature File
 
-1 Feature File taken 0.5 min
+1 Feature File taken 0.66 min
 
-4 Threads = 90 Feature Files / 4 = 22.5 = 7.5 *  min = 15 min
-6 Threads = 90 Feature Files / 6 = 15 = 5 * 2 min = 10 min
-8 Threads = 90 Feature Files / 8 = 11.25 = 3.7 * 2 min = 7.4 min
+4 Threads = 90 Feature Files / 4 = 22.5 = (4 threads) 0.66 min + 18.25 = 12.70 min
+6 Threads = 90 Feature Files / 6 = 15 =  (6 threads) 0.66m + 9 * 0.66 min = 6.6 min
+8 Threads = 90 Feature Files / 8 = 11.25 = (8 threds) 0.66m + 3.25 * 0.66 min = 2.805 min
 ```
 
 
