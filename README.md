@@ -1,8 +1,13 @@
 # Selenium Tips for Nightwatch Cucumber
 
-# Docker CMD
+# Docker
+
+Hub
 ```
 docker run -d -v /etc/localtime:/etc/localtime:ro --env GRID_BROWSER_TIMEOUT=30 -p 4445:4444 --env GRID_MAX_SESSION=5 --env GRID_CLEAN_UP_CYCLE=5000   --name selenium-hub selenium/hub:3.6.0
+```
+Node Chrome
+```
 docker run -d -v /etc/localtime:/etc/localtime:ro --env NODE_MAX_SESSION=1 --env NODE_CLEAN_UP_CYCLE=5000    --link selenium-hub:hub selenium/node-chrome:3.6.0
 ```
 # Nightwatch Cucumber Retry Failed Feature Test:
