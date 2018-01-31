@@ -8,9 +8,9 @@ docker run -d -v /etc/localtime:/etc/localtime:ro --env NODE_MAX_SESSION=1 --env
 # Infrastruture Tips:
 
 1. 2 Core Processor - Go with 2 Parallel Threads - 4 Docker Chrome Node - 1 Hub
-
+```
 Note: Even if you have 16 GB doesn't matter. please go with 2 Parallel Threads
-
+```
 Formula
 ```
 if 2 Core/ 4 GB then Go with Go with 2 Parallel Threads - 4 Docker Chrome Node - 1 Hub
@@ -25,8 +25,10 @@ if 8 Core/ 10 GB then Go with Go with 8 Parallel Threads - 10 Docker Chrome Node
 # Cucumber Tips
 
 1.  Should have 10 Scenarios per Feature File
+```
 Note:
 Nightwatch Cucumber Parallel Threads go by Feature Files not by Scenarios
+```
 
 ```
 30 Scenarios per Feature File - having 30 Feature File
