@@ -6,12 +6,34 @@ docker run -d -v /etc/localtime:/etc/localtime:ro --env GRID_BROWSER_TIMEOUT=30 
 docker run -d -v /etc/localtime:/etc/localtime:ro --env NODE_MAX_SESSION=1 --env NODE_CLEAN_UP_CYCLE=5000    --link selenium-hub:hub selenium/node-chrome:3.6.0
 ```
 # Nightwatch Cucumber Retry Failed Feature Test:
-Nightwatch Cucumber does support rerun failed feature test. bcoz some feature test will be flaky failed when running parallel threads, could be passed by running single threaded.
+Nightwatch Cucumber does support rerun failed feature test. bcoz some feature test will be flaky, failed when running parallel threads, could be passed by running single threaded.
 
 Note: It's good to avoid flaky test. fix the falky test
 
 Rerun Process:
 1. Inital Nightwatch-Cucmber Config
+```
+  "cucumberArgs": [
+    "--require",
+    "./test/features/step_definitions",
+    "--require",
+    "./test/timeout.js",
+    "--format",
+    "pretty",
+    "--format",
+    "json:./reports/cucumber.json",
+    "./test/features"
+  ]
+```
+2. npm run nightwatch // with parallell threads
+3. After completion of feature test, It will geneate a reports in ``reports\cucmber.json`` folder. reports hold failed and passed test
+4. run extractFailedFeatureTest.js , it will genearte a failed test to file ``/test/rerun/@rerun.feature``
+5. @rerun.feature
+```
+/project-dir/test/features/login.feature:72
+/project-dir/test/features/search.feature:26
+```
+6. Nightwatch Cucmber rerun config, please run as single thread
 ```
 nightwatch_config.cucumberArgs = [
 	"--require",
@@ -25,13 +47,8 @@ nightwatch_config.cucumberArgs = [
 	"./test/rerun"
 ];
 ```
-2. npm run nightwatch
-3. After completion of feature test, It will geneate a reports in `reports\cucmber.json` folder. reports hold failed and passed test
-4. 
-Nightwatch Cucmber rerun config
-```
+7. If you want to retry 2 times, again go with steps 4,5,6.
 
-```
 # Infrastruture Tips:
 
 1. 2 Core Processor - Go with 2 Parallel Threads - 4 Docker Chrome Node - 1 Hub
